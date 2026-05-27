@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Comic Sans MS", Roboto, 
-            "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
@@ -24,8 +23,18 @@ body {
     overscroll-behavior: contain;
     touch-action: pan-x pan-y; 
     transform-origin: top left;
-    will-change: transform; 
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
+.main-svg path, 
+.main-svg rect, 
+.main-svg g {
+    shape-rendering: geometricPrecision;
+}
+
 
 .room,
 .room-item {
@@ -84,7 +93,6 @@ body {
 
 .info-box h4 {
     font-size: 20px;
-    color: #555;
 }
 
 .discription-box {
@@ -113,12 +121,12 @@ body {
 }
 @media (min-width: 2000px) {
     .wrapp-info {
-        right: 80px;
-        top: 80px;
+        right: 5%;
+        top: 5%;
     }
 
     .info-box {
-        width: 700px;
+        width: 1300px;
         padding: 50px;
         border-radius: 40px;
         gap: 35px;
@@ -126,15 +134,15 @@ body {
     }
 
     .info-box h5 {
-        font-size: 48px;
+        font-size: 88px;
     }
 
     .info-box h4 {
-        font-size: 38px;
+        font-size: 72px;
     }
 
     .discription-box {
-        font-size: 32px;
+        font-size: 60px;
         gap: 20px;
     }
 
@@ -144,7 +152,7 @@ body {
     }
 
     .close-btn svg {
-        width: 48px;
-        height: 48px;
+        width: 90px;
+        height: 90px;
     }
 }
