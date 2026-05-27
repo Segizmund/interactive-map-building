@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-svg{
+    margin: 10px 0;
+}
+.room,
+.room-item{
+    cursor: pointer;
+    transition: .3s linear;
+}
+.room-group:hover .room,
+.room-group.active .room {
+    fill: #C10F1A;
+}
+.room-group:hover .room-item,
+.room-group.active .room-item{
+    fill: white;
+}
+.path-to-room{
+    opacity: 0;
+    transition: .3s linear;
+}
+.path-to-room.active{
+    opacity: 100;
+}
+.wrapp-info{
+    transition: .3s linear;
+    position: absolute;
+    right: 20px;
+    transform: translateX(120%);
+    top: 20px;
+}
+.info-box{
+    position: relative;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.3);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.3);
+    box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 350px;
+}
+.info-box h5{
+    font-size: 20px;
+}
+.info-box h4{
+    font-size: 18px;
+}
+.discription-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.close-btn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.close-btn svg{
+    fill: #820000;
+    transition: .3s linear;
+}
+.close-btn:hover svg{
+    fill: #C10F1A;
+    transform:rotate(180deg);
+}
+.wrapp-info.active{
+    transform: translateX(0);
+}
