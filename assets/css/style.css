@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SComic Sans MS", Roboto, 
+            "Helvetica Neue", Arial, sans-serif;
 }
 .main-svg{
     margin: 10px 0;
