@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             if (rooms[index]) rooms[index].classList.add('active');
             if (paths[index]) paths[index].classList.add('active');
-            if (info[index]) info[index].classList.add('add');
+            if (info[index]) info[index].classList.add('active');
             if (menuItems[index]) menuItems[index].classList.add('active');
         }
     }
