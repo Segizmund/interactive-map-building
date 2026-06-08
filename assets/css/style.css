@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Templegarten';
+    src: url('../fonts/Templegarten.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +17,7 @@ a{
 }
 body {
     overflow: hidden;
-    background-color: #f5f5f7;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,18 +30,19 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    width: 100%;
 }
 .bottom-menu{
     background-color: white;
     box-shadow: 0px 10px 50px rgba(34, 60, 80, 0.2);
     width: 100%;
     padding: 20px;
-    height: max-content;
+    height: calc(100vh - 65vh);
     z-index: 20;
 }
 .menu{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     overflow: scroll;
     height: calc(100vh - 79vh);
@@ -43,20 +51,20 @@ body {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 10px;
+    gap: 3rem;
     padding: 20px;
-    border-bottom: solid 5px #DADADA;
+    border: solid 5px #DADADA;
+    border-radius: 4rem;
 }
 .menu-item.active{
     background-color: #F0F7FF;
     border-radius: 2rem;
 }
 .menu-item h4{
-    font-size: 4rem;
+    font-size: 3.5rem;
     width: fit-content;
-    padding: 1rem 2rem;
-    color: #226ACC;
-    background-color: #F0F7FF;
+    padding: 0 2rem;
+    color: #385CAF;
     border-radius: 4rem;
 }
 .menu-item span{
@@ -92,12 +100,16 @@ body {
 
 .room-group:hover .room,
 .room-group.active .room {
-    fill: #C10F1A;
+    fill: #5590e0;
 }
 
 .room-group:hover .room-item,
 .room-group.active .room-item {
     stroke: white;
+}
+.room-group:hover .room-text,
+.room-group.active .room-text{
+    fill: white;
 }
 
 .path-to-room {
@@ -171,8 +183,10 @@ body {
 .nav-btns{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 10px 0;
+    z-index: 9999;
 }
 
 .nav-btns a{
@@ -187,12 +201,20 @@ body {
 
 .nav-btns a.active,
 .nav-btns a:hover{
-    background-color: #BFCDE0;
+    background-color: #171717;
+    color: white;
+}
+
+.nav-btns a.active svg path,
+.nav-btns a:hover svg path{
+    stroke: white;
 }
 
 .preview {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -204,6 +226,20 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     visibility: visible;
+}
+
+.honeycomb{
+    position: absolute;
+}
+
+.honeycomb.top{
+    top: 0;
+    left: 0;
+}
+
+.honeycomb.bottom{
+    bottom: 0;
+    right: 0;
 }
 
 .preview.hidden {
@@ -233,11 +269,15 @@ body {
     align-items: center;
     gap: 0.8rem;
 }
-
+.title-line,
+.subtitle{
+    font-family: 'Templegarten', sans-serif;
+}
 .preview-text .title-line {
     display: block;
     min-height: 4.5rem;
     text-align: center;
+    color: #820000;
 }
 
 .preview-text .subtitle {
@@ -557,21 +597,30 @@ body {
 
 @media (min-width: 2000px) {
     .nav-btns a{
-        font-size: 5rem;
-        gap: 5rem;
-        padding: 1rem 4rem;
-        border-radius: 3rem;
+        font-size: 3rem;
+        gap: 3rem;
+        padding: 1.5rem 4rem;
+        border-radius: 2rem;
     }
     .nav-btns a svg{
-        scale: 4;
+        scale: 3;
     }
     .nav-btns{
         margin-top: 5rem;
-        gap: 5rem;
+        gap: 3rem;
     }
     .main-svg {
-        width: 100vw;
-        height: 72vh;
+        width: 86.5vw;
+        position: absolute;
+        left: 6%;
+        top: -0.5%;
+    }
+    .svg-wrapp{
+        background-image: url('../img/map.jpg');
+        background-repeat: no-repeat;
+        height: 65vh;
+        background-position: 39% 30%;
+        background-size: 80%;
     }
     .preview-text{
         font-size: 7rem;
@@ -772,5 +821,114 @@ body {
     
     .search-empty span {
         font-size: 48px;
+    }
+    /*Перечень документов*/
+    .documents-list-content,
+    .plan-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 3rem;
+    }
+    .documents-header h3,
+    .plan-header h3{
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 10rem;
+        font-weight: 500;
+    }
+    .documents-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10rem 3rem;
+        margin: 0 10rem;
+    }
+    .documents-info-box{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    .documents-info-box span{
+        font-size: 3rem;
+        text-align: center;
+    }
+    /*План приема*/
+    .plan-grid-header,
+    .plan-grid-box{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 0 1rem;
+    }
+    .plan-grid-header-item{
+        font-size: 2.4rem;
+        padding: 1rem;
+        text-align: center;
+        color: #385CAF;
+        border: 5px solid #385CAF;
+        border-right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .plan-grid-header-item.rowspan{
+        grid-row: span 2;
+        border: 5px solid #385CAF;
+        border-right: 0;
+    }
+    .plan-grid-header-item.rowspan:first-child{
+        border-top-left-radius: 2rem;
+    }
+    .plan-grid-header-item.colspan{
+        grid-column: span 4;
+        border-bottom: 0;
+        border-right: 5px solid #385CAF;
+        border-top-right-radius: 2rem;
+    }
+    .plan-grid-header-item:last-child{
+        border-right: 5px solid #385CAF;
+    }
+    .plan-info{
+        border: 5px solid black;
+        border-top: 0;
+        border-right: 0;
+        font-size: 2.4rem;
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .plan-info:last-child{
+        border-right: 5px solid black;
+    }
+    /*Чат*/
+    .chat-content{
+        margin-top: 10rem;
+        gap: 20rem;
+    }
+    .chat-content,
+    .chat-box,
+    .chat-title-box{
+        display: flex;
+        flex-direction: column;
+    }
+    .chat-box,
+    .chat-title-box{
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .chat-box img{
+        width: 60%;
+    }
+    .chat-title-box h3{
+        font-size: 4rem;
+        color: #385CAF;
+        width: 70%;
+        text-align: center;
+    }
+    .chat-title-box span{
+        font-size: 3rem;
     }
 }
