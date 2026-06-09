@@ -825,14 +825,16 @@ body {
     /*Перечень документов*/
     .documents-list-content,
     .plan-content,
-    .achievements-content{
+    .achievements-content,
+    .quota-content{
         display: flex;
         flex-direction: column;
         gap: 4rem;
         margin-top: 3rem;
     }
     .plan-content,
-    .achievements-content{
+    .achievements-content,
+    .quota-content{
         overflow-y: scroll;
         height: 85vh;
     }
@@ -984,5 +986,24 @@ body {
     }
     .achievements-info:nth-child(2n){
         border-right: 5px solid black;
+    }
+    /*Квота*/
+    .quota-content h3{
+        font-size: 4rem;
+        color: #385CAF;
+        text-align: center;
+        margin: 0 10rem;
+    }
+    .quota-list{
+        list-style-type: decimal;
+        margin: 0 10rem;
+        font-size: 2.8rem;
+    }
+    .quota-list li{
+        padding: 2rem 0;
+        border-bottom: 5px solid rgba(190, 190, 190, 0.589);
+    }
+    .quota-list li:last-child{
+        border-bottom: none;
     }
 }
