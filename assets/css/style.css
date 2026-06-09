@@ -995,13 +995,14 @@ body {
     }
     .achievements-list{
         list-style-type: disc;
+        padding-left: 7%;
     }
     .achievements-list span{
         font-weight: bold;
         color: #385CAF;
     }
     .achievements-info{
-        font-size: 2.8rem;
+        font-size: 1.8rem;
     }
     .achievements-info h5{
         font-size: 6rem;
@@ -1011,6 +1012,10 @@ body {
         font-size: 3rem;
         color: #385CAF;
         font-weight: bold;
+    }
+    .achievements-list span{
+        font-size: 2rem;
+        color: #385CAF;
     }
     /*Квота*/
     .quota-content h3{
