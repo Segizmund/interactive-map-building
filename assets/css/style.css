@@ -5,11 +5,18 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Montserrat";
 }
 a{
     text-decoration: none;
@@ -45,7 +52,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     overflow: scroll;
-    height: calc(100vh - 79vh);
+    height: calc(100vh - 84vh);
 }
 .menu-item{
     display: flex;
@@ -612,7 +619,7 @@ body {
         width: 86.5vw;
         position: absolute;
         left: 6%;
-        top: -0.5%;
+        top: 3.8%;
     }
     .svg-wrapp{
         background-image: url('../img/map.jpg');
@@ -835,14 +842,15 @@ body {
     .achievements-content,
     .quota-content{
         overflow-y: scroll;
-        height: 85vh;
+        height: 81vh;
     }
     .documents-header h3,
     .plan-header h3{
-        font-size: 3rem;
+        font-size: 4rem;
         text-align: center;
         margin: 0 10rem;
-        font-weight: 500;
+        font-weight: 600;
+        color: #385CAF;
     }
     .documents-grid{
         display: grid;
@@ -959,36 +967,54 @@ body {
     }
     /*Достижения*/
     .achievements-content{
-        margin: 0 10rem;
+        margin: 0 5rem;
+        margin-top: 3rem;
     }
     .achievements-grid{
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 20% auto;
+        border-bottom: 2px solid rgba(190, 190, 190, 0.589);
+        padding-top: 2rem;
+        padding-bottom: 4rem;
     }
-    .achievements-grid-header-item{
-        border: 5px solid #385CAF;
-        font-size: 2.4rem;
-        padding: 1rem;
-        border-right: 0;
-        color: #385CAF;
+    .achievements-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .achievements-header h3{
         text-align: center;
+        font-size: 4rem;
+        font-weight: 600;
+        width: 80%;
+        color: #385CAF;
     }
-    .achievements-grid-header-item.lst{
-        border-right: 5px solid #385CAF;
+    .achievements-grid:last-child{
+        border-bottom: none;
+    }
+    .achievements-list{
+        list-style-type: disc;
+    }
+    .achievements-list span{
+        font-weight: bold;
+        color: #385CAF;
     }
     .achievements-info{
-        font-size: 2.4rem;
-        padding: 1rem;
-        border: 5px solid black;
-        border-top: 0;
-        border-right: 0;
+        font-size: 1.8rem;
     }
-    .achievements-info:nth-child(2n){
-        border-right: 5px solid black;
+    .achievements-info h5{
+        font-size: 6rem;
+        color: #385CAF;
+    }
+    .achievements-info span{
+        font-size: 3rem;
+        color: #385CAF;
+        font-weight: bold;
     }
     /*Квота*/
     .quota-content h3{
         font-size: 4rem;
+        font-weight: 600;
         color: #385CAF;
         text-align: center;
         margin: 0 10rem;
@@ -997,6 +1023,10 @@ body {
         list-style-type: decimal;
         margin: 0 10rem;
         font-size: 2.8rem;
+        list-style-position: inside;
+    }
+    .quota-list:first-child{
+        border-top: 5px solid rgba(190, 190, 190, 0.589);
     }
     .quota-list li{
         padding: 2rem 0;
