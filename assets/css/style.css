@@ -824,11 +824,17 @@ body {
     }
     /*Перечень документов*/
     .documents-list-content,
-    .plan-content{
+    .plan-content,
+    .achievements-content{
         display: flex;
         flex-direction: column;
         gap: 4rem;
         margin-top: 3rem;
+    }
+    .plan-content,
+    .achievements-content{
+        overflow-y: scroll;
+        height: 85vh;
     }
     .documents-header h3,
     .plan-header h3{
@@ -858,7 +864,26 @@ body {
     .plan-grid-box{
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        margin: 0 1rem;
+        margin: 0 10rem;
+    }
+    .plan-content h4{
+        font-size: 2.8rem;
+        margin: 0 10rem;
+    }
+    .plan-grid-header.all,
+    .plan-grid-box.all{
+        grid-template-columns: 1fr;
+    }
+    .plan-grid-box.all .plan-info{
+        border: 5px solid black;
+        border-top: 0;
+        justify-content: flex-start;
+        text-align: start;
+    }
+    .plan-grid-box.all .plan-info.header{
+        font-weight: 600;
+        color: #385CAF;
+        justify-content: center;
     }
     .plan-grid-header-item{
         font-size: 2.4rem;
@@ -930,5 +955,34 @@ body {
     }
     .chat-title-box span{
         font-size: 3rem;
+    }
+    /*Достижения*/
+    .achievements-content{
+        margin: 0 10rem;
+    }
+    .achievements-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .achievements-grid-header-item{
+        border: 5px solid #385CAF;
+        font-size: 2.4rem;
+        padding: 1rem;
+        border-right: 0;
+        color: #385CAF;
+        text-align: center;
+    }
+    .achievements-grid-header-item.lst{
+        border-right: 5px solid #385CAF;
+    }
+    .achievements-info{
+        font-size: 2.4rem;
+        padding: 1rem;
+        border: 5px solid black;
+        border-top: 0;
+        border-right: 0;
+    }
+    .achievements-info:nth-child(2n){
+        border-right: 5px solid black;
     }
 }
