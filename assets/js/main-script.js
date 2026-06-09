@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const isMainPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
 
-    if (isMainPage) {
+    /*if (isMainPage) {
         const isUserActiveNow = sessionStorage.getItem('user_active');
 
         if (isUserActiveNow === 'true') {
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         sessionStorage.setItem('user_active', 'true');
         resetIdleTimer();
-    }
+    }*/
 
     const mapLink = document.querySelector('.nav-btns a[href="index.html"], .nav-btns a[href="/"]');
     if (mapLink) {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.addEventListener('click', function (e) {
-        resetIdleTimer();
+        /*resetIdleTimer();*/
 
         const isInsideRoom = e.target.closest('.room-group');
         const isInsidePath = e.target.closest('.path-to-room');
