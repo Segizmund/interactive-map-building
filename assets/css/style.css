@@ -199,10 +199,11 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-weight: 500;
     padding: 10px 36px;
     border-radius: 8px;
     transition: .3s linear;
-    border: solid 1px black
+    background-color: #F2F2F2;
 }
 
 .nav-btns a.active,
